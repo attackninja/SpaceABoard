@@ -66,6 +66,29 @@ class AudioController {
     }
   }
 
+  public getContext(): AudioContext | null {
+      return this.ctx;
+  }
+
+  public playSpeech(buffer: AudioBuffer) {
+      if (!this.ctx || !this.masterGain) return;
+      
+      // Resume context if suspended
+      if (this.ctx.state === 'suspended') {
+        this.ctx.resume().catch(() => {});
+      }
+
+      const src = this.ctx.createBufferSource();
+      src.buffer = buffer;
+      
+      const gain = this.ctx.createGain();
+      gain.gain.value = 2.0; // Boost speech to be heard over SFX
+      
+      src.connect(gain);
+      gain.connect(this.masterGain);
+      src.start(0);
+  }
+
   private createNoiseBuffer() {
       if (!this.ctx) return;
       const bufferSize = 2 * this.ctx.sampleRate;

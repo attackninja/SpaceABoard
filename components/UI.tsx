@@ -365,7 +365,7 @@ export const UI: React.FC<UIProps> = ({ gameState, setGameState, currentPlanet, 
                   )}
 
                   {activeTab === 'mission' && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pb-20 md:pb-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-8">
                         {Object.values(PLANETS).map((p) => (
                             <button
                             key={p.name}
@@ -394,7 +394,7 @@ export const UI: React.FC<UIProps> = ({ gameState, setGameState, currentPlanet, 
                   )}
 
                   {activeTab === 'hangar' && (
-                      <div className="space-y-6 pb-20 md:pb-0">
+                      <div className="space-y-6 mb-8">
                           {/* Helmet Config */}
                           <div>
                               <label className="text-xs font-bold text-slate-500 uppercase block mb-2">Helmet System</label>
@@ -458,6 +458,15 @@ export const UI: React.FC<UIProps> = ({ gameState, setGameState, currentPlanet, 
                           </div>
                       </div>
                   )}
+
+                  {/* Credits */}
+                  <div className="mt-8 pt-6 border-t border-slate-800 text-center pb-4">
+                      <p className="text-[10px] md:text-xs text-slate-500 tracking-widest mb-1">Designed by Z.Chao Z. (Attackninja)</p>
+                      <p className="text-[10px] md:text-xs font-bold tracking-wide">
+                        <span className="text-slate-600">powered by </span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Gemini 3 Pro</span>
+                      </p>
+                  </div>
               </div>
 
               {/* Footer Actions */}
@@ -511,7 +520,9 @@ export const UI: React.FC<UIProps> = ({ gameState, setGameState, currentPlanet, 
              <div className="text-center w-full max-w-lg bg-black/40 p-8 rounded-2xl border border-green-500/30">
                 <Target size={64} className="text-green-400 mx-auto mb-4 animate-pulse" />
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-2">ROUTE COMPLETE</h2>
-                <p className="text-green-200 text-lg md:text-xl mb-8">MISSION SUCCESSFUL</p>
+                <p className="text-green-200 text-base md:text-lg mb-8 max-w-md mx-auto">
+                    SpaceABoard is a space sports game, game still under development, subscribe <a href="https://github.com/attackninja/SpaceABoard" target="_blank" className="underline text-green-100 hover:text-white">https://github.com/attackninja/SpaceABoard</a> on Github for new releases of updates. Thank you for playing!
+                </p>
                 <button 
                   onClick={() => setGameState(GameState.MENU)}
                   className="bg-white text-green-900 px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform w-full md:w-auto"

@@ -1,3 +1,31 @@
+import { ThreeElements } from '@react-three/fiber';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements extends ThreeElements {
+      mesh: any;
+      group: any;
+      meshStandardMaterial: any;
+      meshBasicMaterial: any;
+      meshPhysicalMaterial: any;
+      bufferGeometry: any;
+      bufferAttribute: any;
+      instancedMesh: any;
+      coneGeometry: any;
+      cylinderGeometry: any;
+      planeGeometry: any;
+      sphereGeometry: any;
+      boxGeometry: any;
+      torusGeometry: any;
+      dodecahedronGeometry: any;
+      ambientLight: any;
+      directionalLight: any;
+      pointLight: any;
+      orthographicCamera: any;
+    }
+  }
+}
+
 export enum PlanetType {
   MARS = 'Mars',
   MOON = 'Moon',
