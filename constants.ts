@@ -1,0 +1,126 @@
+import { PlanetType, PlanetConfig } from './types';
+
+export const PLANETS: Record<PlanetType, PlanetConfig> = {
+  [PlanetType.MARS]: {
+    name: PlanetType.MARS,
+    gravity: 0.38,
+    atmosphereDensity: 0.85,
+    groundColor: '#8a4b38', 
+    skyColor: '#ffbbaa', // Lighter dust sky
+    fogColor: '#c47e66', 
+    mountainHeight: 3000, 
+    terrainRoughness: 0.4, 
+    accentColor: '#ffcc99',
+    stars: false, // Dust obscures stars
+    description: "Olympus Mons. A massive shield volcano. Navigate the dust storms on the endless slope.",
+    scatterType: 'rock',
+    terrainProfile: 'shield',
+    weather: 'dust_storm',
+    locked: false
+  },
+  [PlanetType.MOON]: {
+    name: PlanetType.MOON,
+    gravity: 0.16,
+    atmosphereDensity: 0.0, 
+    groundColor: '#202020', 
+    skyColor: '#000000', 
+    fogColor: '#000000', 
+    mountainHeight: 1800, 
+    terrainRoughness: 2.0, 
+    accentColor: '#eeeeee',
+    stars: true,
+    description: "Mons Huygens. Vacuum silence. A sharp, high-contrast ridge ride.",
+    scatterType: 'rock',
+    terrainProfile: 'ridge',
+    weather: 'none',
+    locked: true
+  },
+  [PlanetType.SATURN]: {
+    name: PlanetType.SATURN,
+    gravity: 1.07,
+    atmosphereDensity: 2.5,
+    groundColor: '#dcc692', 
+    skyColor: '#f7e7c6',
+    fogColor: '#d6c485',
+    mountainHeight: 1200,
+    terrainRoughness: 0.8, 
+    accentColor: '#ffd700',
+    stars: false, 
+    description: "The Hexagon Storm. Gliding on cloud tops with extreme wind velocity.",
+    scatterType: 'none',
+    terrainProfile: 'cloud',
+    weather: 'dust_storm', // Reused for high speed cloud particles
+    locked: true
+  },
+  [PlanetType.SATURN_RINGS]: {
+    name: PlanetType.SATURN_RINGS,
+    gravity: 0.5,
+    atmosphereDensity: 0.1,
+    groundColor: '#a8b5c2', 
+    skyColor: '#0b0b14', 
+    fogColor: '#1d2230',
+    mountainHeight: 1500,
+    terrainRoughness: 2.5,
+    accentColor: '#d6f0ff',
+    stars: true,
+    description: "The B-Ring. A chaotic stream of ice asteroids.",
+    scatterType: 'ice',
+    terrainProfile: 'ridge',
+    weather: 'debris',
+    locked: true
+  },
+  [PlanetType.NEPTUNE]: {
+    name: PlanetType.NEPTUNE,
+    gravity: 1.14,
+    atmosphereDensity: 1.8,
+    groundColor: '#0a1a3a', 
+    skyColor: '#1d4e8a',
+    fogColor: '#163666',
+    mountainHeight: 1400,
+    terrainRoughness: 1.2,
+    accentColor: '#4488ff',
+    stars: false,
+    description: "Diamond Rain Plains. High pressure methane atmosphere with solid carbon precipitation.",
+    scatterType: 'ice',
+    terrainProfile: 'cloud',
+    weather: 'diamond_rain',
+    locked: true
+  },
+  [PlanetType.URANUS]: {
+    name: PlanetType.URANUS,
+    gravity: 0.89,
+    atmosphereDensity: 1.2,
+    groundColor: '#73c3cd', 
+    skyColor: '#b5e8ed',
+    fogColor: '#88cfd6',
+    mountainHeight: 1200,
+    terrainRoughness: 1.0,
+    accentColor: '#ffffff',
+    stars: true,
+    description: "Oberon's View. Sub-zero nitrogen snow on icy plateaus.",
+    scatterType: 'ice',
+    terrainProfile: 'shield',
+    weather: 'snow',
+    locked: true
+  },
+  [PlanetType.SPACECRAFT]: {
+    name: PlanetType.SPACECRAFT,
+    gravity: 1.0,
+    atmosphereDensity: 0.5,
+    groundColor: '#222',
+    skyColor: '#000',
+    fogColor: '#111',
+    mountainHeight: 1000,
+    terrainRoughness: 0.2,
+    accentColor: '#0f0',
+    stars: true,
+    description: "Orbital Habitat. Artificial gravity plating.",
+    scatterType: 'tech',
+    terrainProfile: 'pipe',
+    weather: 'none',
+    locked: true
+  },
+};
+
+export const WORLD_LENGTH = 15000;
+export const START_HEIGHT = 2000;
